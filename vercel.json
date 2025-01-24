@@ -4,12 +4,32 @@
     {
       "src": "main.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "models.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "main.py"
+      "src": "/contacts",
+      "dest": "/main.py"
+    },
+    {
+      "src": "/create_contact",
+      "dest": "/main.py"
+    },
+    {
+      "src": "/update_contact/(.*)",
+      "dest": "/main.py"
+    },
+    {
+      "src": "/delete_contact/(.*)",
+      "dest": "/main.py"
     }
   ]
 }
