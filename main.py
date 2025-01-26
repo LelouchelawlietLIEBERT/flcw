@@ -2,6 +2,17 @@ from flask import request, jsonify
 from config import app, db
 from models import Contact
 
+@app.route("/", methods=["GET", "POST", "PATCH", "DELETE"])
+def handle_request():
+    if request.method == "GET":
+        return jsonify({"message": "GET method received"})
+    elif request.method == "POST":
+        return jsonify({"message": "POST method received"})
+    elif request.method == "PATCH":
+        return jsonify({"message": "PATCH method received"})
+    elif request.method == "DELETE":
+        return jsonify({"message": "DELETE method received"})
+
 
 @app.route("/contacts", methods=["GET"])
 def get_contacts():
